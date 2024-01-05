@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+            margin-top: 15px;
+            margin-left: 40px;
+            background: url(https://images.pexels.com/photos/2908983/pexels-photo-2908983.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+            background-size: cover;
+            width: 90%;
+        }
+        .data{
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 30px;
+            background-color: rgb(122, 255, 211);
+        }
+        table, tr, td, th{
+            border: 2px solid black;
+        }
+        table{
+            width: 100%;
+        }
+        td, th{
+            padding: 5px;
+        }
+</style>
+<body>
+    <div class="data">
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>City</th>
+            <th>Gender</th>
+            <th>SSC</th>
+            <th>HSC</th>
+            <th>Graduate</th>
+            <th colspan="2">Action</th>
+        </tr>
+        {% for i in data %}
+        <tr>
+            <td>{{i.name}}</td>
+            <td>{{i.email}}</td>
+            <td>{{i.city}}</td>
+            <td>{{i.gender}}</td>
+            <td>{{i.SSC}}</td>
+            <td>{{i.HSC}}</td>
+            <td>{{i.graduate}}</td>
+            <td><form action="" method="get">
+                <input type="text" value="{{i.id}}">
+                <input type="submit"  value=" Update ">
+            </form></td>
+            <td><form action="" method="get">
+                <input type="text" value="{{i.id}}">
+                <input type="submit"  value=" Delete ">
+            </form></td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+</body>
+</html>
