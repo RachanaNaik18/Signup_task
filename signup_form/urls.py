@@ -22,4 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('form/', views.display_form, name='form'),
     path('data/', views.data_display, name='data'),
+    path('update/<int:id>', views.update, name='update'), 
+    path('<int:id>', views.delete, name='delete')
 ]
